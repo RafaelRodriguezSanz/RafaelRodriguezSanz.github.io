@@ -8,7 +8,7 @@
     "start": "webpack serve --open",
     "build": "webpack && xcopy /E /I /Y public\\* dist\\",
     "analyze": "webpack --json > stats.json && webpack-bundle-analyzer stats.json",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run clean && npm install && npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "react": "^17.0.2",
