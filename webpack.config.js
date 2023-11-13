@@ -1,5 +1,6 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -9,7 +10,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
-    
     rules: [
       {
         test: /\.(js|jsx)$/, // Incluye archivos con extensión .js y .jsx
@@ -43,4 +43,11 @@ module.exports = {
       }),
     ],
   },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'public', to: '.' }, // Copiar todos los archivos de 'public' a la raíz de la carpeta de salida
+      ],
+    }),
+  ],
 };

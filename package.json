@@ -4,9 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "clean": "if exist \"dist\" rmdir /s /q \"dist\" && if exist \"node_modules\" rmdir /s /q \"node_modules\" && if exist \"package-lock.json\" del /q \"package-lock.json\" && if exist \"stats.json\" del /q \"stats.json\"",
     "start": "webpack serve --open",
-    "build": "webpack",
-    "analyze": "webpack --json > stats.json && webpack-bundle-analyzer stats.json"
+    "build": "webpack && xcopy /E /I /Y public\\* dist\\",
+    "analyze": "webpack --json > stats.json && webpack-bundle-analyzer stats.json",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -17,8 +19,8 @@
     "@babel/preset-env": "^7.23.3",
     "@babel/preset-react": "^7.23.3",
     "babel-loader": "^9.1.3",
-    "babel-minify-webpack-plugin": "^0.0.0",
-    "terser-webpack-plugin": "^5.3.9",
+    "copy-webpack-plugin": "^11.0.0",
+    "gh-pages": "^6.0.0",
     "webpack": "^5.89.0",
     "webpack-bundle-analyzer": "^4.9.1",
     "webpack-cli": "^4.5.0",
