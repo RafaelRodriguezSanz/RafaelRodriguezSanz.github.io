@@ -46,7 +46,7 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'public', to: '.' }, // Copiar todos los archivos de 'public' a la raíz de la carpeta de salida
+        { from: 'public', to: '.' },
       ],
     }),
   ],
