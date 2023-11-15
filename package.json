@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "if exist \"dist\" rmdir /s /q \"dist\" && if exist \"node_modules\" rmdir /s /q \"node_modules\" && if exist \"package-lock.json\" del /q \"package-lock.json\" && if exist \"stats.json\" del /q \"stats.json\"",
-    "start": "webpack serve --open",
+    "start": "webpack serve --open --mode=development",
     "build": "webpack && xcopy /E /I /Y public\\* dist\\",
     "analyze": "webpack --json > stats.json && webpack-bundle-analyzer stats.json",
     "deploy": "npm run clean && npm install && npm run build && gh-pages -d dist"

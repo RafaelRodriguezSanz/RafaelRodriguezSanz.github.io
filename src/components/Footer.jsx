@@ -3,7 +3,7 @@ import React from 'react';
 function Footer() {
   return (
     <footer>
-      <p>&copy; 2023 My React Webpack Project</p>
+      <p>&copy; {new Date().getFullYear()} <span>Rafael Rodriguez</span></p>
     </footer>
   );
 }

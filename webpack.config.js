@@ -27,7 +27,8 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   devServer: {
-    static: path.join(__dirname, 'public'), // Carpeta base del servidor de desarrollo
+    historyApiFallback: true,
+    static: path.join(__dirname, 'public'),
     port: 3000,
     open: true,
   },
