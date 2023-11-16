@@ -1,0 +1,14 @@
+body {
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+/* Agrega un contenedor interno que pueda desplazarse */
+.scroll-container {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.scroll-container::-webkit-scrollbar {
+  width: 0;
+}
